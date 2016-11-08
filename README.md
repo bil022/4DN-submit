@@ -1,13 +1,14 @@
 # 4DN-submit
 
-## workflow
-  1.  User edit in google spreadsheet
-  2.  User click menu to evoke functions written in *google script*. The scripts convert the fields into *JSON* format, and submit to local http server (*centos*)
-  3. Local http server check the JSON objects with *schemas.json*, and filter out the fields that need to be submit to *4DN server*.
-  4. Local http server receive the message from 4DN server, and send back to google spreadsheet
+## google script one-time setup
+  * Run google script: **PropertiesService.getUserProperties().setProperty("4DN-server", "key:pairs");** in **init.gs**
 
-## google script setup
-  1. The key is scored locally like *PropertiesService.getUserProperties();* and *userProperties.setProperty("https://www.encodeproject.org", "xxxxxxxx:yyyyyyyyyyyyyyyy");*
+## workflow
+  1.  User open google spreadsheet, the menu is setup through **OnOpen()** function.
+  2.  User edit meta data using google spreadsheet.
+  3.  User click menu to call Get/Post/Patch functions, data is converted into **JSON** format, and submit to local http server written in **PHP**
+  4.  Local http server match the fields of JSON objects defined in **schemas.json**, and submit the fields that defined for **4DN server**.
+  5.  Local http server receive the message from 4DN server, and send back to google spreadsheet
 
 ## TODO:
   https
