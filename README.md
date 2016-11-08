@@ -7,7 +7,7 @@
   4. Local http server receive the message from 4DN server, and send back to google spreadsheet
 
 ## google script setup
-  1. The key is scored locally using 
+  1. The key is scored locally like *PropertiesService.getUserProperties();* and *userProperties.setProperty("https://www.encodeproject.org", "xxxxxxxx:yyyyyyyyyyyyyyyy");*
 
 ## TODO:
   https
