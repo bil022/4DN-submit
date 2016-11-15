@@ -1,7 +1,11 @@
 # 4DN-submit
 
-## google script one-time setup
-  * Run: **PropertiesService.getUserProperties().setProperty("4DN-server", "key:pairs")** in google script (**init.gs**)
+## Google Apps Script:
+  * https://developers.google.com/apps-script/
+
+## Setup:
+  * Modify the key pairs to the correct ones.
+  * Onetime run: **setup()** in google script in **setup.gs**.
 
 ## workflow
   1.  When user open google spreadsheet, the menu is setup automatically through **OnOpen()** function.
